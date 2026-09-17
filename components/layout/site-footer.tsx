@@ -1,27 +1,56 @@
 import { Container } from '@/components/ui/container';
-import { cv } from '@/content/site';
+import { EmailIcon, GitHubIcon, InstagramIcon, LinkedInIcon } from '@/components/ui/social-icons';
 import { profile } from '@/content/profile';
+
+const footerLinks = [
+  {
+    label: 'Email',
+    href: `mailto:${profile.email}`,
+    icon: EmailIcon,
+  },
+  {
+    label: 'LinkedIn',
+    href: profile.social.find((item) => item.label === 'LinkedIn')?.href ?? 'https://www.linkedin.com/in/dennisoteri/',
+    icon: LinkedInIcon,
+  },
+  {
+    label: 'GitHub',
+    href: profile.social.find((item) => item.label === 'GitHub')?.href ?? 'https://github.com/iosonoDen',
+    icon: GitHubIcon,
+  },
+  {
+    label: 'Instagram',
+    href: profile.social.find((item) => item.label === 'Instagram')?.href ?? 'https://www.instagram.com/dennis.oteri/',
+    icon: InstagramIcon,
+  },
+];
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--line)] py-10">
       <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-[var(--muted)]">
-          © 2026 {profile.name}. Front End Developer, Milan.
+          © 2026 Copyright - Oteri Dennis, Milan
         </p>
-        <ul className="flex flex-wrap gap-5 text-sm">
-          {profile.social.map((item) => (
-            <li key={item.href}>
-              <a className="interactive-hit inline-flex rounded-full px-2 py-1 text-[var(--muted)]" href={item.href}>
-                {item.label}
-              </a>
-            </li>
-          ))}
-          <li>
-            <a className="interactive-hit inline-flex rounded-full px-2 py-1 text-[var(--muted)]" href={cv.href} download={cv.filename}>
-              CV
-            </a>
-          </li>
+        <ul className="flex flex-wrap items-center gap-3">
+          {footerLinks.map((item) => {
+            const Icon = item.icon;
+            const external = item.href.startsWith('http');
+
+            return (
+              <li key={item.label}>
+                <a
+                  className="interactive-hit inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--muted)]"
+                  href={item.href}
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noreferrer' : undefined}
+                  aria-label={item.label}
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </Container>
     </footer>

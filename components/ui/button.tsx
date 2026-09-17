@@ -7,13 +7,14 @@ type ButtonProps = {
   children: ReactNode;
   href?: string;
   download?: string | boolean;
-  variant?: 'primary' | 'secondary' | 'text';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'text';
   className?: string;
 } & Omit<ComponentPropsWithoutRef<'button'>, 'children' | 'className'>;
 
 const styles = {
-  primary: 'bg-[var(--ink)] text-black',
-  secondary: 'border border-[var(--line)] bg-white/[0.03] text-[var(--ink)]',
+  primary: 'bg-[var(--accent-strong)] text-[#140804]',
+  secondary: 'border border-[var(--accent-strong)] bg-transparent text-[var(--accent-strong)]',
+  ghost: 'border border-[var(--line)] bg-white/[0.03] text-[var(--ink)]',
   text: 'px-0 text-[var(--ink)] underline-offset-8',
 };
 

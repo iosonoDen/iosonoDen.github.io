@@ -1,6 +1,6 @@
 # Dennis Oteri — Portfolio
 
-Personal site of **Dennis Oteri**, Front End Developer based between Milan, Varese, and Canton Ticino.
+Personal site of **Dennis Oteri**, Front End Developer based between Canegrate, Milan.
 
 The site is a single-page portfolio built to be read by recruiters and hiring managers in one sitting: who I am, what I ship, where I have worked, and how to contact me. Copy, stats, and case studies live in typed files — not in a CMS — so the page stays honest, fast, and easy to update.
 

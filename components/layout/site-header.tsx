@@ -31,7 +31,7 @@ export function SiteHeader() {
           </ul>
         </nav>
         <div className="flex items-center justify-self-end gap-3">
-          <Button href={cv.href} download={cv.filename} variant="secondary" className="hidden sm:inline-flex">
+          <Button href={cv.href} download={cv.filename} variant="ghost" className="hidden sm:inline-flex">
             {cv.label}
           </Button>
           <details className="relative md:hidden">

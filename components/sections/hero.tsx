@@ -9,8 +9,8 @@ import { profile } from '@/content/profile';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[calc(100svh-4rem)] py-10 sm:py-12 md:flex md:items-center lg:py-6" aria-labelledby="hero-title">
-      <Container className="grid items-stretch gap-8 md:grid-cols-[minmax(0,1fr)_minmax(16rem,22rem)] md:gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(22rem,34rem)] lg:gap-14 xl:gap-20">
+    <section className="relative overflow-visible min-h-[calc(100svh-4rem)] py-12 sm:py-14 md:flex md:items-center lg:py-10" aria-labelledby="hero-title">
+      <Container className="grid items-stretch gap-8 overflow-visible md:grid-cols-[minmax(0,1fr)_minmax(16rem,22rem)] md:gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(22rem,34rem)] lg:gap-14 xl:gap-20">
         <div>
           <p className="max-w-xl text-[0.68rem] font-semibold uppercase leading-5 tracking-[0.18em] text-[var(--accent-strong)] sm:text-[0.72rem] sm:leading-6">
             {profile.location}
@@ -46,7 +46,7 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-[28rem] md:mx-0 md:h-full md:max-w-none">
-          <div className="relative aspect-[767/895] overflow-hidden rounded-[1.25rem] bg-[#c2410c] md:absolute md:inset-0 md:aspect-auto">
+          <div className="relative aspect-[767/895] overflow-hidden rounded-[1.25rem] bg-[#c2410c] md:absolute md:inset-x-0 md:-top-8 md:-bottom-8 md:aspect-auto">
             <Image
               src={profile.photo.src}
               alt={profile.photo.alt}
