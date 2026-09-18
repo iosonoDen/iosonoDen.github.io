@@ -27,7 +27,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const shared = cn(
-    'interactive-hit inline-flex min-h-11 items-center justify-center gap-2 overflow-visible rounded-full px-5 text-sm font-semibold tracking-[-0.01em]',
+    'interactive-hit inline-flex min-h-11 items-center justify-center gap-2 overflow-visible rounded-full px-5 text-sm font-semibold tracking-[-0.01em] touch-manipulation',
     styles[variant],
     className,
   );

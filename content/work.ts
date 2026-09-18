@@ -13,7 +13,7 @@ export const caseStudies: CaseStudy[] = [
       'Content rewritten from the CV: Front End Developer, payment work, measurable skills.',
     ],
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    outcome: 'A recruiter can understand who I am, what I ship, and why to reply — in one viewport.',
+    outcome: 'A recruiter can understand who I am, what I ship, and why to reply in one viewport.',
   },
   {
     id: 'payment-software',

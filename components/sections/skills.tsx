@@ -13,9 +13,9 @@ function SkillTile({ id, label }: { id: string; label: string }) {
 
   return (
     <li>
-      <div className="interactive-hit flex h-full min-h-[6.25rem] flex-col items-center justify-center gap-2.5 rounded-lg bg-[var(--surface-elevated)] px-2 py-3 text-center">
-        <Icon className="h-9 w-9 text-white" />
-        <span className="text-[0.7rem] font-semibold leading-tight text-[var(--ink)] sm:text-xs">
+      <div className="interactive-hit flex h-full min-h-[5.25rem] flex-col items-center justify-center gap-2 rounded-lg bg-[var(--surface-elevated)] px-2 py-3 text-center sm:min-h-[6.25rem] sm:gap-2.5">
+        <Icon className="h-8 w-8 text-white sm:h-9 sm:w-9" />
+        <span className="text-[0.65rem] font-semibold leading-tight text-[var(--ink)] sm:text-xs">
           {label}
         </span>
       </div>
@@ -27,23 +27,23 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="scroll-mt-20 py-24 sm:py-32"
+      className="py-16 sm:py-32"
       aria-labelledby="skills-title"
     >
       <Container>
         <Reveal>
           <SectionHeading
             id="skills-title"
-            eyebrow="Coding & UI/UX stack"
+            eyebrow="Stacks"
             title="Tools I ship with."
             description="Grouped by how I use them."
           />
         </Reveal>
-        <div className="mt-12 divide-y divide-[var(--line)] border-y border-[var(--line)]">
+        <div className="mt-10 divide-y divide-[var(--line)] border-y border-[var(--line)] sm:mt-12">
           {skillGroups.map((group, index) => (
             <Reveal key={group.id} delay={index * 0.06}>
-              <article className="grid gap-5 py-8 lg:grid-cols-[15rem_minmax(0,1fr)] lg:items-start">
-                <h3 className="text-base font-bold uppercase tracking-[0.14em] text-[var(--accent-strong)] sm:text-lg">
+              <article className="grid gap-4 py-6 sm:gap-5 sm:py-8 lg:grid-cols-[15rem_minmax(0,1fr)] lg:items-start">
+                <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-[var(--accent-strong)] sm:text-lg">
                   {group.title}
                 </h3>
                 <ul className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-8">

@@ -4,6 +4,7 @@ import { Experience } from '@/components/sections/experience';
 import { Hero } from '@/components/sections/hero';
 import { Skills } from '@/components/sections/skills';
 import { Work } from '@/components/sections/work';
+import { HashScroll } from '@/components/layout/hash-scroll';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SkipLink } from '@/components/layout/skip-link';
@@ -13,6 +14,7 @@ export default function HomePage() {
   return (
     <>
       <SkipLink />
+      <HashScroll />
       <CursorGlow />
       <SiteHeader />
       <main id="top">

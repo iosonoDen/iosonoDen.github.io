@@ -1,18 +1,35 @@
-import Image from 'next/image';
+'use client';
 
+import Image from 'next/image';
+import { useState } from 'react';
+
+import { MobileNav } from '@/components/layout/mobile-nav';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { cv, navigation } from '@/content/site';
 import { profile } from '@/content/profile';
 
 export function SiteHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="bg-[color:var(--canvas)]/85 sticky top-0 z-50 overflow-visible border-b border-[var(--line)] backdrop-blur-xl">
+    <header className="bg-[color:var(--canvas)]/85 sticky top-0 z-50 overflow-visible border-b border-[var(--line)] pt-[env(safe-area-inset-top)] backdrop-blur-xl">
       <Container className="grid min-h-16 grid-cols-[auto_1fr_auto] items-center gap-4">
         <a
-          className="interactive-hit inline-flex overflow-visible rounded-md p-1"
+          className={`inline-flex overflow-visible rounded-md p-1 ${
+            menuOpen
+              ? 'pointer-events-none cursor-default opacity-40'
+              : 'interactive-hit'
+          }`}
           href="#top"
           aria-label={`${profile.name}, home`}
+          aria-disabled={menuOpen}
+          tabIndex={menuOpen ? -1 : undefined}
+          onClick={(event) => {
+            if (menuOpen) {
+              event.preventDefault();
+            }
+          }}
         >
           <Image
             src="/brand/logo-do.png"
@@ -31,7 +48,7 @@ export function SiteHeader() {
             {navigation.map((item) => (
               <li key={item.href}>
                 <a
-                  className="interactive-hit inline-flex rounded-full px-3 py-2 transition-colors hover:text-[var(--ink)]"
+                  className="interactive-hit inline-flex rounded-full px-3 py-2 font-bold transition-colors hover:text-[var(--ink)]"
                   href={item.href}
                 >
                   {item.label}
@@ -45,27 +62,11 @@ export function SiteHeader() {
             href={cv.href}
             download={cv.filename}
             variant="ghost"
-            className="hidden sm:inline-flex"
+            className="hidden md:inline-flex"
           >
             {cv.label}
           </Button>
-          <details className="relative md:hidden">
-            <summary className="interactive-hit cursor-pointer list-none rounded-full px-3 py-2 text-sm font-semibold [&::-webkit-details-marker]:hidden">
-              Menu
-            </summary>
-            <ul className="absolute right-0 mt-3 min-w-44 border border-[var(--line)] bg-[var(--surface-elevated)] p-3 text-sm">
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <a
-                    className="interactive-hit block rounded-full px-3 py-2 text-[var(--muted)] hover:text-[var(--ink)]"
-                    href={item.href}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </details>
+          <MobileNav open={menuOpen} onOpenChange={setMenuOpen} />
         </div>
       </Container>
     </header>

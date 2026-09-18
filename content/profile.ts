@@ -26,7 +26,7 @@ export const profile: Profile = {
 };
 
 export const whyHireMe = [
-  'Payment-domain delivery: I treat unattended payment software as a product, not a demo — test plans, regression, and release confidence included.',
+  'Payment-domain delivery: I treat unattended payment software as a product, not a demo test plans, regression, and release confidence included.',
   'Accessibility is a requirement, not polish: focus states, contrast, and keyboard paths are part of the interface contract.',
   'Full-stack range without theatre: Front End first, with Node.js/MySQL when the product needs a real backend.',
 ];

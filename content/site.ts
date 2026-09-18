@@ -15,11 +15,11 @@ export const aboutPhoto = {
 };
 
 export const navigation = [
-  { href: '#work', label: 'Work' },
-  { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#work', label: 'Projects' },
+  { href: '#about', label: 'About Me' },
+  { href: '#experience', label: 'Jobs Journey' },
+  { href: '#skills', label: 'Stacks' },
+  { href: '#contact', label: 'Contacts' },
 ];
 
 export const cv = {
