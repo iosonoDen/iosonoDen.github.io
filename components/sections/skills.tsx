@@ -1,7 +1,25 @@
 import { Reveal } from '@/components/motion/reveal';
 import { Container } from '@/components/ui/container';
 import { SectionHeading } from '@/components/ui/section-heading';
+import { skillIcons } from '@/components/ui/skill-icons';
 import { skillGroups } from '@/content/skills';
+
+function SkillTile({ id, label }: { id: string; label: string }) {
+  const Icon = skillIcons[id];
+
+  if (!Icon) {
+    return null;
+  }
+
+  return (
+    <li>
+      <div className="interactive-hit flex h-full min-h-[6.25rem] flex-col items-center justify-center gap-2.5 rounded-lg bg-[var(--surface-elevated)] px-2 py-3 text-center">
+        <Icon className="h-9 w-9 text-white" />
+        <span className="text-[0.7rem] font-semibold leading-tight text-[var(--ink)] sm:text-xs">{label}</span>
+      </div>
+    </li>
+  );
+}
 
 export function Skills() {
   return (
@@ -10,24 +28,21 @@ export function Skills() {
         <Reveal>
           <SectionHeading
             id="skills-title"
-            eyebrow="Stack"
-            title="Tools I actually ship with."
-            description="Grouped by how I use them — not a logo wall, not a percentage bar."
+            eyebrow="Coding & UI/UX stack"
+            title="Tools I ship with."
+            description="Grouped by how I use them."
           />
         </Reveal>
-        <div className="mt-16 grid gap-6 sm:grid-cols-2">
+        <div className="mt-12 divide-y divide-[var(--line)] border-y border-[var(--line)]">
           {skillGroups.map((group, index) => (
             <Reveal key={group.id} delay={index * 0.06}>
-              <article className="border border-[var(--line)] bg-[var(--surface)] p-8">
-                <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--accent-strong)]">{group.title}</h3>
-                <ul className="mt-6 flex flex-wrap gap-2">
+              <article className="grid gap-5 py-8 lg:grid-cols-[15rem_minmax(0,1fr)] lg:items-start">
+                <h3 className="text-base font-bold uppercase tracking-[0.14em] text-[var(--accent-strong)] sm:text-lg">
+                  {group.title}
+                </h3>
+                <ul className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-8">
                   {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-full border border-[var(--line)] px-3 py-1 text-sm text-[var(--ink)]"
-                    >
-                      {item}
-                    </li>
+                    <SkillTile key={item.id} id={item.id} label={item.label} />
                   ))}
                 </ul>
               </article>

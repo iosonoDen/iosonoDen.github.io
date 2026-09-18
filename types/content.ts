@@ -9,10 +9,15 @@ export type Stat = {
   label: string;
 };
 
+export type SkillItem = {
+  id: string;
+  label: string;
+};
+
 export type SkillGroup = {
   id: string;
   title: string;
-  items: string[];
+  items: SkillItem[];
 };
 
 export type Experience = {

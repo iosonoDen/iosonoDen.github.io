@@ -12,7 +12,7 @@ export function Hero() {
     <section className="relative overflow-visible min-h-[calc(100svh-4rem)] py-12 sm:py-14 md:flex md:items-center lg:py-10" aria-labelledby="hero-title">
       <Container className="grid items-stretch gap-8 overflow-visible md:grid-cols-[minmax(0,1fr)_minmax(16rem,22rem)] md:gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(22rem,34rem)] lg:gap-14 xl:gap-20">
         <div>
-          <p className="max-w-xl text-[0.68rem] font-semibold uppercase leading-5 tracking-[0.18em] text-[var(--accent-strong)] sm:text-[0.72rem] sm:leading-6">
+          <p className="whitespace-pre-line text-[0.68rem] font-semibold uppercase leading-5 tracking-[0.18em] text-[var(--accent-strong)] sm:text-[0.72rem] sm:leading-6">
             {profile.location}
           </p>
           <p className="mt-6 text-[1.05rem] text-[var(--muted)] sm:text-lg">Hello, I&apos;m</p>

@@ -3,7 +3,7 @@ import type { Profile } from '@/types/content';
 export const profile: Profile = {
   name: 'Dennis Oteri',
   role: 'Front End Developer',
-  location: 'Milan, Italy - Varese, Italy - Canton Ticino, Switzerland',
+  location: 'Milan, Italy | Varese, Italy\nCanton Ticino, Switzerland - Available to move',
   email: 'dennis.oteri@gmail.com',
   headline: 'Dennis Oteri',
   lede: 'I create interfaces designed to have a tangible impact on the feasibility of the project. I design and develop eye-catching interfaces for products destined to take the market by storm.',

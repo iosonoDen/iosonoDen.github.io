@@ -4,21 +4,43 @@ export const skillGroups: SkillGroup[] = [
   {
     id: 'frontend',
     title: 'Frontend',
-    items: ['React', 'TypeScript', 'Next.js', 'Angular', 'Vue.js', 'Tailwind CSS', 'HTML5', 'CSS3'],
+    items: [
+      { id: 'react', label: 'React' },
+      { id: 'typescript', label: 'TypeScript' },
+      { id: 'nextjs', label: 'Next.js' },
+      { id: 'angular', label: 'Angular' },
+      { id: 'vue', label: 'Vue.js' },
+      { id: 'tailwind', label: 'Tailwind CSS' },
+      { id: 'html5', label: 'HTML5' },
+      { id: 'css3', label: 'CSS3' },
+    ],
   },
   {
     id: 'backend',
     title: 'Backend & data',
-    items: ['Node.js', 'MySQL', 'JavaScript'],
+    items: [
+      { id: 'nodejs', label: 'Node.js' },
+      { id: 'mysql', label: 'MySQL' },
+      { id: 'javascript', label: 'JavaScript' },
+    ],
   },
   {
     id: 'quality',
     title: 'Quality & delivery',
-    items: ['Test plans', 'Regression testing', 'Web accessibility', 'Agile delivery'],
+    items: [
+      { id: 'test-plans', label: 'Test plans' },
+      { id: 'regression', label: 'Regression testing' },
+      { id: 'accessibility', label: 'Web accessibility' },
+      { id: 'agile', label: 'Agile delivery' },
+    ],
   },
   {
     id: 'design',
     title: 'Design',
-    items: ['Figma', 'UI / UX', 'User-centered design'],
+    items: [
+      { id: 'figma', label: 'Figma' },
+      { id: 'ui-ux', label: 'UI / UX' },
+      { id: 'user-centered', label: 'User-centered design' },
+    ],
   },
 ];
