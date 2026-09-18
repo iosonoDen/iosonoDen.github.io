@@ -1,6 +1,7 @@
 import { Container } from '@/components/ui/container';
 import { EmailIcon, GitHubIcon, InstagramIcon, LinkedInIcon } from '@/components/ui/social-icons';
 import { profile } from '@/content/profile';
+import { siteVersion } from '@/content/site';
 
 const footerLinks = [
   {
@@ -29,9 +30,10 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--line)] py-10">
       <Container className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-[var(--muted)]">
-          © 2026 Copyright - Oteri Dennis, Milan
-        </p>
+        <div className="text-sm text-[var(--muted)]">
+          <p>© 2026 Copyright - Oteri Dennis, Milan</p>
+          <p className="mt-1 text-xs tracking-wide">v{siteVersion}</p>
+        </div>
         <ul className="flex flex-wrap items-center gap-3">
           {footerLinks.map((item) => {
             const Icon = item.icon;

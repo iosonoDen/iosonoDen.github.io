@@ -1,3 +1,4 @@
+import packageJson from '../package.json';
 import { profile } from '@/content/profile';
 
 export const aboutStory = [
@@ -28,6 +29,8 @@ export const cv = {
 };
 
 export const siteName = 'Dennis Oteri - Portfolio';
+
+export const siteVersion = packageJson.version;
 
 export const site = {
   profile,
