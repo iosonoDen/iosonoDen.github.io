@@ -21,7 +21,7 @@ export function Work() {
             <Reveal key={study.id} delay={index * 0.08}>
               <article className="flex h-full flex-col border border-[var(--line)] bg-[var(--surface-elevated)] p-8 transition-transform duration-300 hover:-translate-y-1">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--accent-strong)]">{study.eyebrow}</p>
-                <h3 className="mt-4 font-[var(--display)] text-3xl font-semibold tracking-[-0.05em]">{study.title}</h3>
+                <h3 className="mt-4 text-3xl font-semibold tracking-[-0.05em]">{study.title}</h3>
                 <p className="mt-5 text-base leading-7 text-[var(--muted)]">
                   <span className="font-semibold text-[var(--ink)]">Problem. </span>
                   {study.problem}

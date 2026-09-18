@@ -5,7 +5,11 @@ import { experiences } from '@/content/experience';
 
 export function Experience() {
   return (
-    <section id="experience" className="scroll-mt-20 border-y border-[var(--line)] bg-[var(--surface)] py-24 sm:py-32" aria-labelledby="experience-title">
+    <section
+      id="experience"
+      className="scroll-mt-20 border-y border-[var(--line)] bg-[var(--surface)] py-24 sm:py-32"
+      aria-labelledby="experience-title"
+    >
       <Container>
         <Reveal>
           <SectionHeading
@@ -22,16 +26,20 @@ export function Experience() {
                 <article className="grid gap-6 border-t border-[var(--line)] pt-10 lg:grid-cols-[18rem_minmax(0,1fr)]">
                   <div>
                     <p className="text-sm text-[var(--muted)]">{role.period}</p>
-                    <p className="mt-2 text-sm text-[var(--muted)]">{role.location}</p>
+                    <p className="mt-2 text-sm text-[var(--muted)]">
+                      {role.location}
+                    </p>
                   </div>
                   <div>
-                    <h3 className="font-[var(--display)] text-3xl font-semibold tracking-[-0.05em]">
+                    <h3 className="text-3xl font-semibold tracking-[-0.05em]">
                       {role.role}
                     </h3>
                     <p className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--accent-strong)]">
                       {role.company}
                     </p>
-                    <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--muted)]">{role.summary}</p>
+                    <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--muted)]">
+                      {role.summary}
+                    </p>
                     <ul className="mt-5 max-w-3xl space-y-2 text-sm leading-6 text-[var(--muted)]">
                       {role.outcomes.map((outcome) => (
                         <li key={outcome}>→ {outcome}</li>

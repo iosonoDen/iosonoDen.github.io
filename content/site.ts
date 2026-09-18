@@ -27,6 +27,8 @@ export const cv = {
   filename: 'Dennis-Oteri-CV.pdf',
 };
 
+export const siteName = 'Dennis Oteri - Portfolio';
+
 export const site = {
   profile,
   navigation,

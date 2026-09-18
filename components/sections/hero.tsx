@@ -9,16 +9,21 @@ import { profile } from '@/content/profile';
 
 export function Hero() {
   return (
-    <section className="relative overflow-visible min-h-[calc(100svh-4rem)] py-12 sm:py-14 md:flex md:items-center lg:py-10" aria-labelledby="hero-title">
+    <section
+      className="relative min-h-[calc(100svh-4rem)] overflow-visible py-12 sm:py-14 md:flex md:items-center lg:py-10"
+      aria-labelledby="hero-title"
+    >
       <Container className="grid items-stretch gap-8 overflow-visible md:grid-cols-[minmax(0,1fr)_minmax(16rem,22rem)] md:gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(22rem,34rem)] lg:gap-14 xl:gap-20">
         <div>
           <p className="whitespace-pre-line text-[0.68rem] font-semibold uppercase leading-5 tracking-[0.18em] text-[var(--accent-strong)] sm:text-[0.72rem] sm:leading-6">
             {profile.location}
           </p>
-          <p className="mt-6 text-[1.05rem] text-[var(--muted)] sm:text-lg">Hello, I&apos;m</p>
+          <p className="mt-6 text-[1.05rem] text-[var(--muted)] sm:text-lg">
+            Hello, I&apos;m
+          </p>
           <h1
             id="hero-title"
-            className="mt-1 font-[var(--display)] text-6xl font-semibold leading-[0.86] tracking-[-0.07em] text-[var(--ink)] sm:text-7xl lg:text-[clamp(4.5rem,7.6vw,7.25rem)]"
+            className="mt-1 text-6xl font-semibold leading-[0.86] tracking-[-0.07em] text-[var(--ink)] sm:text-7xl lg:text-[clamp(4.5rem,7.6vw,7.25rem)]"
           >
             {profile.headline}
           </h1>
@@ -37,7 +42,7 @@ export function Hero() {
                 <dt className="whitespace-nowrap text-[0.8rem] font-bold uppercase leading-5 tracking-[0.12em] text-[var(--muted)]">
                   {stat.label}
                 </dt>
-                <dd className="mt-2 font-[var(--display)] text-[2.75rem] font-semibold leading-none tracking-[-0.06em] text-[var(--ink)] sm:text-5xl">
+                <dd className="mt-2 text-[2.75rem] font-semibold leading-none tracking-[-0.06em] text-[var(--ink)] sm:text-5xl">
                   <CountUp value={stat.value} suffix={stat.suffix} />
                 </dd>
               </div>
@@ -46,7 +51,7 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-[28rem] md:mx-0 md:h-full md:max-w-none">
-          <div className="relative aspect-[767/895] overflow-hidden rounded-[1.25rem] bg-[#c2410c] md:absolute md:inset-x-0 md:-top-8 md:-bottom-8 md:aspect-auto">
+          <div className="relative aspect-[767/895] overflow-hidden rounded-[1.25rem] bg-[#c2410c] md:absolute md:inset-x-0 md:-bottom-8 md:-top-8 md:aspect-auto">
             <Image
               src={profile.photo.src}
               alt={profile.photo.alt}

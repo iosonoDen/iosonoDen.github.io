@@ -4,11 +4,17 @@ import { Container } from '@/components/ui/container';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { profile } from '@/content/profile';
 
-const linkedIn = profile.social.find((item) => item.label === 'LinkedIn')?.href ?? 'https://www.linkedin.com/in/dennisoteri/';
+const linkedIn =
+  profile.social.find((item) => item.label === 'LinkedIn')?.href ??
+  'https://www.linkedin.com/in/dennisoteri/';
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-20 border-t border-[var(--line)] bg-[var(--canvas)] py-24 sm:py-32" aria-labelledby="contact-title">
+    <section
+      id="contact"
+      className="scroll-mt-20 border-t border-[var(--line)] bg-[var(--canvas)] py-24 sm:py-32"
+      aria-labelledby="contact-title"
+    >
       <Container>
         <Reveal>
           <SectionHeading

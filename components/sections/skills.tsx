@@ -15,7 +15,9 @@ function SkillTile({ id, label }: { id: string; label: string }) {
     <li>
       <div className="interactive-hit flex h-full min-h-[6.25rem] flex-col items-center justify-center gap-2.5 rounded-lg bg-[var(--surface-elevated)] px-2 py-3 text-center">
         <Icon className="h-9 w-9 text-white" />
-        <span className="text-[0.7rem] font-semibold leading-tight text-[var(--ink)] sm:text-xs">{label}</span>
+        <span className="text-[0.7rem] font-semibold leading-tight text-[var(--ink)] sm:text-xs">
+          {label}
+        </span>
       </div>
     </li>
   );
@@ -23,7 +25,11 @@ function SkillTile({ id, label }: { id: string; label: string }) {
 
 export function Skills() {
   return (
-    <section id="skills" className="scroll-mt-20 py-24 sm:py-32" aria-labelledby="skills-title">
+    <section
+      id="skills"
+      className="scroll-mt-20 py-24 sm:py-32"
+      aria-labelledby="skills-title"
+    >
       <Container>
         <Reveal>
           <SectionHeading

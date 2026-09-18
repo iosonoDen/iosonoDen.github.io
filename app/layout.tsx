@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 
 import { profile } from '@/content/profile';
+import { siteName } from '@/content/site';
 
 import './globals.css';
 
@@ -16,13 +17,15 @@ const description = profile.lede;
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  applicationName: siteName,
   title: {
-    default: `${profile.name} — ${profile.role}`,
-    template: `%s | ${profile.name}`,
+    default: siteName,
+    template: `%s | ${siteName}`,
   },
   description,
   openGraph: {
-    title: `${profile.name} — ${profile.role}`,
+    title: siteName,
+    siteName,
     description,
     type: 'website',
     locale: 'en_US',
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${profile.name} — ${profile.role}`,
+    title: siteName,
     description,
   },
 };
