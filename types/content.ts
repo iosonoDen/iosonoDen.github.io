@@ -26,7 +26,7 @@ export type Experience = {
   company: string;
   location: string;
   period: string;
-  summary: string;
+  summary?: string;
   outcomes: string[];
 };
 

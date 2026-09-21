@@ -7,7 +7,6 @@ export const experiences: Experience[] = [
     company: 'MADIC ITALIA S.r.l.',
     location: 'Cardano al Campo (VA)',
     period: 'November 2024 -> Present',
-    summary:'',
     outcomes: [
       'Designed and executed test plans that validate end-to-end payment functionality before release.',
       'Collaborated with engineering to certify highly reliable software deployments.',

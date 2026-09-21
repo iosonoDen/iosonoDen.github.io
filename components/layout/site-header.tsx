@@ -6,29 +6,34 @@ import { useState } from 'react';
 import { MobileNav } from '@/components/layout/mobile-nav';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
-import { cv, navigation } from '@/content/site';
 import { profile } from '@/content/profile';
+import { cv, navigation } from '@/content/site';
+import { cn } from '@/lib/cn';
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[color:var(--canvas)]/85 sticky top-0 z-50 overflow-visible border-b border-[var(--line)] pt-[env(safe-area-inset-top)] backdrop-blur-xl">
+    <header
+      id="site-header"
+      className="bg-[color:var(--canvas)]/85 sticky top-0 z-50 overflow-visible border-b border-[var(--line)] pt-[env(safe-area-inset-top)] backdrop-blur-xl"
+    >
       <Container className="grid min-h-16 grid-cols-[auto_1fr_auto] items-center gap-4">
-        <a
-          className={`inline-flex overflow-visible rounded-md p-1 ${
-            menuOpen
-              ? 'pointer-events-none cursor-default opacity-40'
-              : 'interactive-hit'
-          }`}
-          href="#top"
+        <button
+          type="button"
+          className={cn(
+            'inline-flex overflow-visible rounded-md border-0 bg-transparent p-1',
+            menuOpen ? 'cursor-default opacity-40' : 'interactive-hit',
+          )}
           aria-label={`${profile.name}, home`}
-          aria-disabled={menuOpen}
-          tabIndex={menuOpen ? -1 : undefined}
-          onClick={(event) => {
-            if (menuOpen) {
-              event.preventDefault();
-            }
+          disabled={menuOpen}
+          onClick={() => {
+            const reduced = window.matchMedia(
+              '(prefers-reduced-motion: reduce)',
+            ).matches;
+
+            history.pushState(null, '', '#top');
+            window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
           }}
         >
           <Image
@@ -39,7 +44,7 @@ export function SiteHeader() {
             className="h-8 w-[4.5rem] object-contain invert"
             priority
           />
-        </a>
+        </button>
         <nav
           className="hidden justify-self-center md:block"
           aria-label="Primary navigation"

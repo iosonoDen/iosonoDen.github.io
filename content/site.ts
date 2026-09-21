@@ -1,6 +1,3 @@
-import packageJson from '../package.json';
-import { profile } from '@/content/profile';
-
 export const aboutStory = [
   'My bond with technology began with a PlayStation 1: officially a maternity gift, but practically the perfect excuse for my father to play with it on weekends. I grew up playing iconic titles until late at night. By age of five, I was already capable of booting up the console myself on our old CRT TV.',
   'Realizing this early fascination, my parents soon bought me my first desktop PC. I learned to type on a keyboard before I could even hold a pen, funnily enough. As I grew older, playing videogames became somewhat of a background passion, but that initial spark never faded.',
@@ -29,11 +26,3 @@ export const cv = {
 };
 
 export const siteName = 'Dennis Oteri - Portfolio';
-
-export const siteVersion = packageJson.version;
-
-export const site = {
-  profile,
-  navigation,
-  cv,
-};

@@ -14,12 +14,19 @@ type MobileNavProps = {
   onOpenChange: (open: boolean) => void;
 };
 
+function lockBodyScroll() {
+  document.body.style.overflow = 'hidden';
+}
+
+function unlockBodyScroll() {
+  document.body.style.removeProperty('overflow');
+}
+
 export function MobileNav({ open, onOpenChange }: MobileNavProps) {
   const [mounted, setMounted] = useState(false);
   const panelId = useId();
   const reduceMotion = useReducedMotion();
   const openRef = useRef(open);
-  const overflowRef = useRef('');
 
   openRef.current = open;
 
@@ -28,12 +35,26 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
   }, []);
 
   useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 768px)');
+    const collapse = () => {
+      if (desktop.matches) {
+        onOpenChange(false);
+      }
+    };
+
+    desktop.addEventListener('change', collapse);
+
+    return () => {
+      desktop.removeEventListener('change', collapse);
+    };
+  }, [onOpenChange]);
+
+  useEffect(() => {
     if (!open) {
       return;
     }
 
-    overflowRef.current = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    lockBodyScroll();
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -50,13 +71,13 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
 
   useEffect(() => {
     return () => {
-      document.body.style.overflow = overflowRef.current;
+      unlockBodyScroll();
     };
   }, []);
 
   const unlockBody = () => {
     if (!openRef.current) {
-      document.body.style.overflow = overflowRef.current;
+      unlockBodyScroll();
     }
   };
 
@@ -111,7 +132,12 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
                   ease,
                 }}
               >
-                <Button href={cv.href} download={cv.filename} variant="ghost" className="w-full">
+                <Button
+                  href={cv.href}
+                  download={cv.filename}
+                  variant="ghost"
+                  className="w-full"
+                >
                   {cv.label}
                 </Button>
               </motion.div>
@@ -137,12 +163,23 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
             <motion.span
               key="close"
               className="flex"
-              initial={reduceMotion ? false : { opacity: 0, rotate: -90, scale: 0.75 }}
+              initial={
+                reduceMotion ? false : { opacity: 0, rotate: -90, scale: 0.75 }
+              }
               animate={{ opacity: 1, rotate: 0, scale: 1 }}
-              exit={reduceMotion ? { opacity: 0 } : { opacity: 0, rotate: 90, scale: 0.75 }}
+              exit={
+                reduceMotion
+                  ? { opacity: 0 }
+                  : { opacity: 0, rotate: 90, scale: 0.75 }
+              }
               transition={{ duration: reduceMotion ? 0.01 : 0.2, ease }}
             >
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
                 <path
                   d="M6 6l12 12M18 6 6 18"
                   stroke="currentColor"
@@ -155,12 +192,23 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
             <motion.span
               key="open"
               className="flex"
-              initial={reduceMotion ? false : { opacity: 0, rotate: 90, scale: 0.75 }}
+              initial={
+                reduceMotion ? false : { opacity: 0, rotate: 90, scale: 0.75 }
+              }
               animate={{ opacity: 1, rotate: 0, scale: 1 }}
-              exit={reduceMotion ? { opacity: 0 } : { opacity: 0, rotate: -90, scale: 0.75 }}
+              exit={
+                reduceMotion
+                  ? { opacity: 0 }
+                  : { opacity: 0, rotate: -90, scale: 0.75 }
+              }
               transition={{ duration: reduceMotion ? 0.01 : 0.2, ease }}
             >
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
                 <path
                   d="M5 7h14M5 12h14M5 17h14"
                   stroke="currentColor"

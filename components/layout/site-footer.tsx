@@ -1,7 +1,12 @@
 import { Container } from '@/components/ui/container';
-import { EmailIcon, GitHubIcon, InstagramIcon, LinkedInIcon } from '@/components/ui/social-icons';
+import {
+  EmailIcon,
+  GitHubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+} from '@/components/ui/social-icons';
 import { profile } from '@/content/profile';
-import { siteVersion } from '@/content/site';
+import { siteVersion } from '@/content/version';
 
 const footerLinks = [
   {
@@ -11,17 +16,23 @@ const footerLinks = [
   },
   {
     label: 'LinkedIn',
-    href: profile.social.find((item) => item.label === 'LinkedIn')?.href ?? 'https://www.linkedin.com/in/dennisoteri/',
+    href:
+      profile.social.find((item) => item.label === 'LinkedIn')?.href ??
+      'https://www.linkedin.com/in/dennisoteri/',
     icon: LinkedInIcon,
   },
   {
     label: 'GitHub',
-    href: profile.social.find((item) => item.label === 'GitHub')?.href ?? 'https://github.com/iosonoDen',
+    href:
+      profile.social.find((item) => item.label === 'GitHub')?.href ??
+      'https://github.com/iosonoDen',
     icon: GitHubIcon,
   },
   {
     label: 'Instagram',
-    href: profile.social.find((item) => item.label === 'Instagram')?.href ?? 'https://www.instagram.com/dennis.oteri/',
+    href:
+      profile.social.find((item) => item.label === 'Instagram')?.href ??
+      'https://www.instagram.com/dennis.oteri/',
     icon: InstagramIcon,
   },
 ];

@@ -23,7 +23,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+  ),
   applicationName: siteName,
   title: {
     default: siteName,
@@ -49,6 +51,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteName,
     description,
+    images: [
+      {
+        url: profile.photo.src,
+        width: profile.photo.width,
+        height: profile.photo.height,
+        alt: profile.photo.alt,
+      },
+    ],
   },
 };
 
@@ -63,15 +73,29 @@ const jsonLd = {
     addressLocality: 'Milan',
     addressCountry: 'IT',
   },
-  sameAs: profile.social.filter((item) => item.href.startsWith('http')).map((item) => item.href),
-  knowsAbout: ['React', 'TypeScript', 'Next.js', 'Payment software', 'Web accessibility', 'Node.js', 'MySQL'],
+  sameAs: profile.social
+    .filter((item) => item.href.startsWith('http'))
+    .map((item) => item.href),
+  knowsAbout: [
+    'React',
+    'TypeScript',
+    'Next.js',
+    'Payment software',
+    'Web accessibility',
+    'Node.js',
+    'MySQL',
+  ],
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script id="person-jsonld" type="application/ld+json">
+          {JSON.stringify(jsonLd).replace(/</g, '\\u003c')}
+        </script>
         {children}
       </body>
     </html>

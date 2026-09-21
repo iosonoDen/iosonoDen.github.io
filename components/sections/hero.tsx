@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
@@ -50,7 +48,11 @@ export function Hero() {
           <Button href="#work" className="w-full md:w-auto">
             Projects
           </Button>
-          <Button href={`mailto:${profile.email}`} variant="secondary" className="w-full md:w-auto">
+          <Button
+            href={`mailto:${profile.email}`}
+            variant="secondary"
+            className="w-full md:w-auto"
+          >
             E-mail me
           </Button>
         </div>

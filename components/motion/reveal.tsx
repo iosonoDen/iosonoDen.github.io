@@ -3,8 +3,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useEffect, useState, type ReactNode } from 'react';
 
-import { cn } from '@/lib/cn';
-
 type RevealProps = {
   children: ReactNode;
   className?: string;
@@ -25,7 +23,7 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
 
   return (
     <motion.div
-      className={cn(className)}
+      className={className}
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}

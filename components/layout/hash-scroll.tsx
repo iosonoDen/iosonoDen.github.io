@@ -5,14 +5,17 @@ import { useEffect } from 'react';
 const HEADER_GAP = 8;
 
 function headerOffset() {
-  const header = document.querySelector('header');
+  const header = document.getElementById('site-header');
   const height = header?.getBoundingClientRect().height ?? 64;
 
   return height + HEADER_GAP;
 }
 
 function syncHeaderOffset() {
-  document.documentElement.style.setProperty('--header-offset', `${headerOffset()}px`);
+  document.documentElement.style.setProperty(
+    '--header-offset',
+    `${headerOffset()}px`,
+  );
 }
 
 function scrollToHash(hash: string, behavior: ScrollBehavior) {
@@ -33,7 +36,10 @@ function scrollToHash(hash: string, behavior: ScrollBehavior) {
     return;
   }
 
-  const top = Math.max(0, window.scrollY + target.getBoundingClientRect().top - headerOffset());
+  const top = Math.max(
+    0,
+    window.scrollY + target.getBoundingClientRect().top - headerOffset(),
+  );
   window.scrollTo({ top, behavior });
 }
 
@@ -41,7 +47,7 @@ export function HashScroll() {
   useEffect(() => {
     syncHeaderOffset();
 
-    const header = document.querySelector('header');
+    const header = document.getElementById('site-header');
     const resizeObserver = header ? new ResizeObserver(syncHeaderOffset) : null;
 
     if (header && resizeObserver) {
@@ -50,7 +56,9 @@ export function HashScroll() {
 
     window.addEventListener('resize', syncHeaderOffset);
 
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
     const behavior: ScrollBehavior = reduced ? 'auto' : 'smooth';
 
     if (window.location.hash) {
@@ -60,11 +68,20 @@ export function HashScroll() {
     }
 
     const onClick = (event: MouseEvent) => {
-      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
         return;
       }
 
-      const link = (event.target as HTMLElement | null)?.closest('a[href^="#"]');
+      const link = (event.target as HTMLElement | null)?.closest(
+        'a[href^="#"]',
+      );
 
       if (!link) {
         return;

@@ -2,16 +2,16 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
-    branches: [main]
+    branches: [main, develop]
 
 permissions:
   contents: read
 
 jobs:
   quality:
-    name: Lint, type-check and build
+    name: Lint, type-check, test and build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,6 +32,9 @@ jobs:
 
       - name: Type-check
         run: npm run type-check
+
+      - name: Test
+        run: npm test
 
       - name: Build
         run: npm run build
