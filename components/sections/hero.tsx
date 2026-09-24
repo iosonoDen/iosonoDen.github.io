@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { CountUp } from '@/components/ui/count-up';
 import { profile } from '@/content/profile';
@@ -44,18 +43,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="flex flex-col items-stretch gap-3 md:col-start-1 md:mt-8 md:flex-row md:flex-wrap md:items-center">
-          <Button href="#work" className="w-full md:w-auto">
-            Projects
-          </Button>
-          <Button
-            href={`mailto:${profile.email}`}
-            variant="secondary"
-            className="w-full md:w-auto"
-          >
-            E-mail me
-          </Button>
-        </div>
+        <div className="hidden md:col-start-1 md:mt-8 md:block md:min-h-11" aria-hidden="true" />
 
         <dl className="flex flex-wrap gap-x-10 gap-y-5 border-t border-[var(--line)] pt-6 md:col-start-1 md:mt-10 md:gap-x-12 md:gap-y-6 md:pt-8">
           {profile.stats.map((stat) => (

@@ -6,7 +6,7 @@ export const experiences: Experience[] = [
     role: 'Beta Testing Specialist',
     company: 'MADIC ITALIA S.r.l.',
     location: 'Cardano al Campo (VA)',
-    period: 'November 2024 -> Present',
+    period: 'November 2024 → Present',
     outcomes: [
       'Designed and executed test plans that validate end-to-end payment functionality before release.',
       'Collaborated with engineering to certify highly reliable software deployments.',
@@ -14,15 +14,14 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 'ennova',
+    id: 'vodafone',
     role: 'Level 2 Technical Support Specialist',
-    company: 'ENNOVA S.p.A.',
+    company: 'Vodafone S.p.A.',
     location: 'Gerenzano (VA)',
-    period: 'September 2022 -> May 2024',
-    summary:
-      'Advanced L2 diagnosis for network and ISP anomalies. The job trained the same instincts I now use in product work: isolate the failure, reduce noise, and leave the system more understandable than I found it.',
+    period: 'September 2022 → May 2024',
     outcomes: [
-      'Resolved critical connectivity issues including bandwidth degradation and intermittent drops.',
+      'Advanced L2 diagnosis for network and ISP anomalies;',
+      'Resolved critical connectivity issues including bandwidth degradation and intermittent drops;',
       'Guided clients through advanced configuration of cascaded routers, mesh extenders and IoT integrations.',
     ],
   },

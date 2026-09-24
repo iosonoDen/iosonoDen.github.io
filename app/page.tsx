@@ -1,3 +1,4 @@
+import { EmailFab } from '@/components/layout/email-fab';
 import { HashScroll } from '@/components/layout/hash-scroll';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { SiteHeader } from '@/components/layout/site-header';
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HashScroll />
       <CursorGlow />
       <SiteHeader />
+      <EmailFab />
       <main id="top">
         <Hero />
         <Work />

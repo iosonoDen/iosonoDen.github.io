@@ -36,7 +36,7 @@ export function Skills() {
             id="skills-title"
             eyebrow="Stacks"
             title="Tools I ship with."
-            description="Grouped by how I use them."
+            description="Sorted by usage."
           />
         </Reveal>
         <div className="mt-10 divide-y divide-[var(--line)] border-y border-[var(--line)] sm:mt-12">

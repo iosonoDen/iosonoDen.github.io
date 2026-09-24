@@ -15,15 +15,21 @@ export function Experience() {
           <SectionHeading
             id="experience-title"
             eyebrow="Jobs Journey"
-            title="Experience that holds up in production."
-            description="MADIC is a Front End Developer role on payment software. ENNOVA is the diagnostic discipline underneath it."
+            title="My Professional experience."
+            description="Below, you'll find a list of all my work experience since I finished secondary school."
           />
         </Reveal>
         <ol className="mt-10 space-y-8 sm:mt-16 sm:space-y-10">
           {experiences.map((role, index) => (
             <li key={role.id}>
               <Reveal delay={index * 0.08}>
-                <article className="grid gap-4 border-t border-[var(--line)] pt-8 sm:gap-6 sm:pt-10 lg:grid-cols-[18rem_minmax(0,1fr)]">
+                <article
+                  className={
+                    index === 0
+                      ? 'grid gap-4 sm:gap-6 lg:grid-cols-[18rem_minmax(0,1fr)]'
+                      : 'grid gap-4 border-t border-[var(--line)] pt-8 sm:gap-6 sm:pt-10 lg:grid-cols-[18rem_minmax(0,1fr)]'
+                  }
+                >
                   <div>
                     <p className="text-sm text-[var(--muted)]">{role.period}</p>
                     <p className="mt-1 text-sm text-[var(--muted)] sm:mt-2">

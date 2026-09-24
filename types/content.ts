@@ -32,13 +32,14 @@ export type Experience = {
 
 export type CaseStudy = {
   id: string;
-  eyebrow: string;
   title: string;
-  problem: string;
-  decisions: string[];
-  stack: string[];
-  outcome: string;
-  href?: string;
+  description: string;
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
 };
 
 export type Profile = {

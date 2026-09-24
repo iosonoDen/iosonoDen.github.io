@@ -2,31 +2,39 @@ import type { CaseStudy } from '@/types/content';
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: 'portfolio-v2',
-    eyebrow: 'Flagship product',
-    title: 'Rebuilding the personal site as evidence, not a brochure.',
-    problem:
-      'The previous portfolio was a client-rendered SPA with broken metric counters, Beta Tester positioning, and no case studies. Recruiters could not see the actual engineering.',
-    decisions: [
-      'Next.js App Router + TypeScript for a prerendered, typed foundation.',
-      'A dark flagship design system with cinematic type, not a template theme.',
-      'Content rewritten from the CV: Front End Developer, payment work, measurable skills.',
-    ],
-    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    outcome: 'A recruiter can understand who I am, what I ship, and why to reply in one viewport.',
+    id: 'website-devpulse',
+    title: 'website-devpulse',
+    description:
+      'Realtime observability console for a simulated microservice mesh. It streams API latency, throughput, CPU and memory, and HTTP error rates.',
+    image: {
+      src: '/images/projects/website-devpulse.png',
+      alt: 'DevPulse realtime dashboard with latency, throughput, CPU and error-rate charts.',
+      width: 1024,
+      height: 489,
+    },
   },
   {
-    id: 'payment-software',
-    eyebrow: 'Unattended payments',
-    title: 'Release confidence for payment-grade software.',
-    problem:
-      'Unattended payment releases cannot ship on vibe. Functionality, regression and documentation have to hold up in the field.',
-    decisions: [
-      'End-to-end test plans instead of ad-hoc clicking.',
-      'Close loop with engineering so defects die before certification.',
-      'Frontend quality bar aligned with PCI-aware production constraints.',
-    ],
-    stack: ['React', 'TypeScript', 'Test plans', 'Payment software'],
-    outcome: 'Releases certified with documented coverage and a shared language between QA and engineering.',
+    id: 'website-financy',
+    title: 'website-financy',
+    description:
+      'An automatic personal finance manager. It aggregates all accounts, detects recurring costs, and forecasts liquidity days/months/years in advance.',
+    image: {
+      src: '/images/projects/website-financy.png',
+      alt: 'Financy sign-in screen beside a projection of future account balance.',
+      width: 1024,
+      height: 485,
+    },
+  },
+  {
+    id: 'website-restaurant',
+    title: 'website-restaurant',
+    description:
+      'Fine-dining website for "Zafferano Milano" (Made Up Enterprise). A cinematic intro leads to the dinner, explain the menu and the booking page for the clients.',
+    image: {
+      src: '/images/projects/website-restaurant.png',
+      alt: 'Zafferano Milano homepage with a plated pasta dish and the restaurant navigation.',
+      width: 1024,
+      height: 488,
+    },
   },
 ];
